@@ -13,8 +13,10 @@ public class RefreshDemo {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/spring-context.xml");
         //默认第一次getBean的时候发生依赖注入
         Person person = (Person)context.getBean("person");
+//        Person person = context.getBean(Person.class);
         //person.getName();
         person.playGame();
+//        person.playGame();
 
     }
 }

@@ -13,14 +13,22 @@
 
 	<!--<bean id="stAd" class="com.xuxu.sprd.aop.StudentAdvice"></bean>-->
 
-	<!--<bean id="student" class="com.xuxu.sprd.pojo.Student">
-		<property name="tClass" value="101"></property>
-		<property name="grade" value="3"></property>
-	</bean>-->
 
 	<bean id="person" class="com.xuxu.sprd.pojo.Person">
 		<property name="name" value="xuxu"></property>
 		<property name="age" value="26"></property>
 		<!--<property name="student" ref="student"></property>-->
+		<!--<constructor-arg index="0" value="xuxu"/>-->
+		<!--<constructor-arg index="1" value="1"/>-->
 	</bean>
+
+	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
+
+	<!--<bean id="myInterceptor" class="com.xuxu.sprd.ioc.MyMethodInterceptor" lazy-init="false"/>-->
+
+
+	<!--<bean id="student" class="com.xuxu.sprd.pojo.Student" lazy-init="true">-->
+		<!--<property name="tClass" value="101"></property>-->
+		<!--<property name="grade" value="3"></property>-->
+	<!--</bean>-->
 </beans>
