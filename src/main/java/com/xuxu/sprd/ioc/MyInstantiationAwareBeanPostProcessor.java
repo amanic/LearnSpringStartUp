@@ -14,7 +14,7 @@ import java.beans.PropertyDescriptor;
  */
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 
- /*   public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessBeforeInstantiation\n");
         //利用 其 生成动态代理
         if(beanClass==Person.class){
@@ -22,33 +22,29 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
             enhancer.setSuperclass(beanClass);
             enhancer.setCallback(new MyMethodInterceptor());
             Person testFb = (Person)enhancer.create();
+            testFb.setAge(1);
+            testFb.setName("cht");
             System.out.print("返回动态代理\n");
             return testFb;
         }
         return null;
-    }*/
+    }
 
-    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+   /* public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessBeforeInstantiation\n");
         return null;
-    }
+    }*/
 
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessAfterInstantiation\n");
 
-        return false;
+        return true;
     }
 
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
-        System.out.print("beanName:"+beanName+"执行..postProcessPropertyValues\n");
-        if(bean instanceof Person){
-            PropertyValue value = pvs.getPropertyValue("name");
-            System.out.print("修改之前 name 的value是："+value.getValue()+"\n");
-            value.setConvertedValue("我修改啦");
-            return pvs;
-        }
         return pvs;
     }
+
 
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessBeforeInitialization\n");

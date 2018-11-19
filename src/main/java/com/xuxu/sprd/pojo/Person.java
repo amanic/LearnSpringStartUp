@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * Created by joakira on 2017/12/4.
  */
 //@Service
-public class Person implements BeanNameAware /*implements BeanFactoryAware*/ {
+public class Person /*implements BeanNameAware*/ /*implements BeanFactoryAware*/ {
 //    @Value("abc")
     private String name ;
 //    @Value("12")
@@ -54,9 +54,9 @@ public class Person implements BeanNameAware /*implements BeanFactoryAware*/ {
         System.out.println(getName() + "正在玩游戏");
     }
 
-    public void setBeanName(String name) {
-        System.out.println("this.setBeanName");
-    }
+//    public void setBeanName(String name) {
+//        System.out.println("this.setBeanName");
+//    }
 
 //    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 //        System.out.println("this.setBeanFactory");
