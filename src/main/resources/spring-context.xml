@@ -22,6 +22,7 @@
 		<!--<constructor-arg index="1" value="1"/>-->
 	</bean>
 
+	<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>
 	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
 
 	<!--<bean id="myInterceptor" class="com.xuxu.sprd.ioc.MyMethodInterceptor" lazy-init="false"/>-->
@@ -31,4 +32,20 @@
 		<!--<property name="tClass" value="101"></property>-->
 		<!--<property name="grade" value="3"></property>-->
 	<!--</bean>-->
+
+	<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson">
+		<property name="name" value="zhangsan"></property>
+	</bean>
+	<!-- 准备切点跟advice -->
+	<!--<bean id="beforeAfterAdvice" class="com.xuxu.sprd.aop.testProxyFactoryBean.PersonAdvice"/>-->
+
+	<!--<aop:config>-->
+		<!--<aop:aspect id="aspect" ref="beforeAfterAdvice">-->
+			<!--<aop:pointcut id="queryPoincut" expression="execution(* com.xuxu.sprd.aop.testProxyFactoryBean.PersonAdvice.*(..))" />-->
+			<!--<aop:before method="before" pointcut-ref="queryPoincut"/>-->
+			<!--<aop:after method="afterReturning" pointcut-ref="queryPoincut"/>-->
+		<!--</aop:aspect>-->
+	<!--</aop:config>-->
+
+
 </beans>

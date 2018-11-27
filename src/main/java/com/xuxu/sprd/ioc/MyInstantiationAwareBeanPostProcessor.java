@@ -14,26 +14,26 @@ import java.beans.PropertyDescriptor;
  */
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 
+//    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+//        System.out.print("beanName:"+beanName+"执行..postProcessBeforeInstantiation\n");
+//        //利用 其 生成动态代理
+//        if(beanClass==Person.class){
+//            Enhancer enhancer = new Enhancer();
+//            enhancer.setSuperclass(beanClass);
+//            enhancer.setCallback(new MyMethodInterceptor());
+//            Person testFb = (Person)enhancer.create();
+//            testFb.setAge(1);
+//            testFb.setName("cht");
+//            System.out.print("返回动态代理\n");
+//            return testFb;
+//        }
+//        return null;
+//    }
+
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessBeforeInstantiation\n");
-        //利用 其 生成动态代理
-        if(beanClass==Person.class){
-            Enhancer enhancer = new Enhancer();
-            enhancer.setSuperclass(beanClass);
-            enhancer.setCallback(new MyMethodInterceptor());
-            Person testFb = (Person)enhancer.create();
-            testFb.setAge(1);
-            testFb.setName("cht");
-            System.out.print("返回动态代理\n");
-            return testFb;
-        }
         return null;
     }
-
-   /* public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        System.out.print("beanName:"+beanName+"执行..postProcessBeforeInstantiation\n");
-        return null;
-    }*/
 
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         System.out.print("beanName:"+beanName+"执行..postProcessAfterInstantiation\n");

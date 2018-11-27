@@ -1,5 +1,6 @@
 package com.xuxu.sprd.ioc;
 
+import com.xuxu.sprd.aop.testProxyFactoryBean.CPerson;
 import com.xuxu.sprd.pojo.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,11 +13,14 @@ public class RefreshDemo {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/spring-context.xml");
         //默认第一次getBean的时候发生依赖注入
+//        CPerson person = (CPerson)context.getBean("cperson");
         Person person = (Person)context.getBean("person");
 //        Person person = context.getBean(Person.class);
-        //person.getName();
+//        person.getName();
+//        System.out.println(person.queryName());
         person.playGame();
-//        person.playGame();
 
     }
 }
+
+
