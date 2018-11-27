@@ -7,6 +7,7 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
+ * 实现{@link BeanFactoryPostProcessor}接口，操作beandefinition
  * Created by martea on 2018/11/27.
  */
 public class FactoryPostProcessor implements BeanFactoryPostProcessor{
