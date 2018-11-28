@@ -33,7 +33,7 @@
 		<!--<property name="grade" value="3"></property>-->
 	<!--</bean>-->
 
-	<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson">
+	<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson" lazy-init="true">
 		<property name="name" value="zhangsan"></property>
 	</bean>
 
