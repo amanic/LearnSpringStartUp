@@ -2,6 +2,7 @@ package com.xuxu.sprd.ioc;
 
 import com.xuxu.sprd.aop.testProxyFactoryBean.CPerson;
 import com.xuxu.sprd.pojo.Person;
+import com.xuxu.sprd.pojo.School;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -19,6 +20,10 @@ public class RefreshDemo {
 //        person.getName();
 //        System.out.println(person.queryName());
         person.playGame();
+        School school = (School)context.getBean("school");
+        System.out.println(school.getBeanId());
+        System.out.println(school.toString());
+
 
     }
 }

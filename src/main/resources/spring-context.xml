@@ -23,7 +23,7 @@
 	</bean>
 
 	<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>
-	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
+	<!--<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>-->
 
 	<!--<bean id="myInterceptor" class="com.xuxu.sprd.ioc.MyMethodInterceptor" lazy-init="false"/>-->
 
@@ -36,6 +36,8 @@
 	<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson">
 		<property name="name" value="zhangsan"></property>
 	</bean>
+
+	<bean id="school" class="com.xuxu.sprd.pojo.School"/>
 	<!-- 准备切点跟advice -->
 	<!--<bean id="beforeAfterAdvice" class="com.xuxu.sprd.aop.testProxyFactoryBean.PersonAdvice"/>-->
 
