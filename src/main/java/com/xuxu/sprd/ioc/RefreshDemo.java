@@ -20,10 +20,9 @@ public class RefreshDemo {
 //        person.getName();
 //        System.out.println(person.queryName());
         person.playGame();
-        School school = (School)context.getBean("school");
-        System.out.println(school.getBeanId());
-        System.out.println(school.toString());
-
+//        School school = (School)context.getBean("school");
+//        System.out.println(school.getBeanId());
+//        System.out.println(school.toString());
 
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 public class FactoryPostProcessor implements BeanFactoryPostProcessor{
 
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        /*对beandefinition进行修改
         System.out.println("************************BeanFactoryPostProcessor************************");
         String[] beanStr = beanFactory.getBeanDefinitionNames();
         for (String s : beanStr){
@@ -24,6 +25,6 @@ public class FactoryPostProcessor implements BeanFactoryPostProcessor{
                     System.out.println("》》》修改了name属性初始值了");
                 }
             }
-        }
+        }*/
     }
 }

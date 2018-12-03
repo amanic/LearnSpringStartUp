@@ -12,6 +12,11 @@ public class Main {
 //        System.out.println(loader.getParent().getParent());
 
 
+
+
+
+
+
         try {
             Class clazz = Thread.currentThread().getContextClassLoader().loadClass("com.xuxu.sprd.pojo.Person");
             System.out.println(clazz);

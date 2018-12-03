@@ -22,8 +22,8 @@
 		<!--<constructor-arg index="1" value="1"/>-->
 	</bean>
 
-	<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>
-	<!--<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>-->
+	<!--<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>-->
+	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
 
 	<!--<bean id="myInterceptor" class="com.xuxu.sprd.ioc.MyMethodInterceptor" lazy-init="false"/>-->
 
@@ -33,11 +33,11 @@
 		<!--<property name="grade" value="3"></property>-->
 	<!--</bean>-->
 
-	<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson" lazy-init="true">
-		<property name="name" value="zhangsan"></property>
-	</bean>
+	<!--<bean id="cperson" class="com.xuxu.sprd.aop.testProxyFactoryBean.CPerson" lazy-init="true">-->
+		<!--<property name="name" value="zhangsan"></property>-->
+	<!--</bean>-->
 
-	<bean id="school" class="com.xuxu.sprd.pojo.School"/>
+	<!--<bean id="school" class="com.xuxu.sprd.pojo.School"/>-->
 	<!-- 准备切点跟advice -->
 	<!--<bean id="beforeAfterAdvice" class="com.xuxu.sprd.aop.testProxyFactoryBean.PersonAdvice"/>-->
 
