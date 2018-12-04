@@ -2,6 +2,7 @@ package com.xuxu.sprd.ioc;
 
 import com.xuxu.sprd.pojo.Person;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValue;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
@@ -43,6 +44,12 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     }
 
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
+        if(bean instanceof Person || beanName.equals("person")){
+            if(pvs instanceof MutablePropertyValues){
+                MutablePropertyValues pvs1 = (MutablePropertyValues) pvs;
+//                pvs1.removePropertyValue();
+            }
+        }
         return pvs;
     }
 
