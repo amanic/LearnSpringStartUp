@@ -10,6 +10,9 @@ public class GenericTest {
 
     public static void main(String[] args) {
         test1();
+        Integer s = 3;
+        Integer o = testReturnT(s);
+
     }
 
     /**
@@ -90,6 +93,18 @@ public class GenericTest {
 
     public static void getUpperNumberData(Box<? extends Number> data) {
         System.out.println("data :" + data.getData());
+    }
+
+
+    /**
+     * 泛型方法，如果这个方法里用到了纯粹的泛型，所谓不纯粹的泛型就是形如List<T>,
+     * 那么这个方法就要加上一个<T>
+     * @param s
+     * @param <T>
+     * @return
+     */
+    public static <T>T testReturnT(T s){
+        return null;
     }
 
 }
