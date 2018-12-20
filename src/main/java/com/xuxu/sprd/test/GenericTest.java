@@ -75,6 +75,8 @@ public class GenericTest {
      */
     public static void test4() {
         Box<String> name = new Box<String>("corn");
+
+        Box<Object> obj = new Box<Object>(new Object());
         Box<Integer> age = new Box<Integer>(712);
         Box<Number> number = new Box<Number>(314);
 
@@ -85,6 +87,11 @@ public class GenericTest {
         //getUpperNumberData(name); // 1 这里会报错
         getUpperNumberData(age);    // 2
         getUpperNumberData(number); // 3
+
+        getlowerNumberData(name);
+        getlowerNumberData(obj);
+//        getlowerNumberData(age); 这里会报错
+
     }
 
     public static void getData(Box<?> data) {
@@ -94,6 +101,12 @@ public class GenericTest {
     public static void getUpperNumberData(Box<? extends Number> data) {
         System.out.println("data :" + data.getData());
     }
+
+    public static void getlowerNumberData(Box<? super String> data) {
+        System.out.println("data :" + data.getData());
+    }
+
+
 
 
     /**
