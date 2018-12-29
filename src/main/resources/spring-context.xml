@@ -11,15 +11,15 @@
 
 	<!--<bean id="stAd" class="com.xuxu.sprd.aop.StudentAdvice"></bean>-->
 
-	<context:component-scan base-package="com.xuxu.sprd.pojo"/>
+	<context:component-scan base-package="com.xuxu.sprd"/>
 
-	<bean id="person" class="com.xuxu.sprd.pojo.Person">
-		<property name="name" value="xuxu"></property>
-		<property name="age" value="26"></property>
-		<!--<property name="student" ref="student"></property>-->
-		<!--<constructor-arg index="0" value="xuxu"/>-->
-		<!--<constructor-arg index="1" value="1"/>-->
-	</bean>
+	<!--<bean id="person" class="com.xuxu.sprd.pojo.Person">-->
+		<!--<property name="name" value="xuxu"></property>-->
+		<!--<property name="age" value="26"></property>-->
+		<!--&lt;!&ndash;<property name="student" ref="student"></property>&ndash;&gt;-->
+		<!--&lt;!&ndash;<constructor-arg index="0" value="xuxu"/>&ndash;&gt;-->
+		<!--&lt;!&ndash;<constructor-arg index="1" value="1"/>&ndash;&gt;-->
+	<!--</bean>-->
 
 	<!--<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>-->
 	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
