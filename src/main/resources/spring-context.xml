@@ -4,22 +4,28 @@
 	   xmlns:aop="http://www.springframework.org/schema/aop"
 	   xmlns:context="http://www.springframework.org/schema/context"
 	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:test="http://www.cnblogs.com/test/schema/user"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+    http://www.cnblogs.com/test/schema/user http://www.cnblogs.com/test/schema/user/user.xsd">
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
 
 	<!--<bean id="stAd" class="com.xuxu.sprd.aop.StudentAdvice"></bean>-->
 
 	<context:component-scan base-package="com.xuxu.sprd"/>
 
-	<!--<bean id="person" class="com.xuxu.sprd.pojo.Person">-->
-		<!--<property name="name" value="xuxu"></property>-->
-		<!--<property name="age" value="26"></property>-->
-		<!--&lt;!&ndash;<property name="student" ref="student"></property>&ndash;&gt;-->
-		<!--&lt;!&ndash;<constructor-arg index="0" value="xuxu"/>&ndash;&gt;-->
-		<!--&lt;!&ndash;<constructor-arg index="1" value="1"/>&ndash;&gt;-->
-	<!--</bean>-->
+	<bean id="person" class="com.xuxu.sprd.pojo.Person">
+		<property name="name" value="xuxu"></property>
+		<property name="age" value="26"></property>
+		<!--<property name="student" ref="student"></property>-->
+		<!--<constructor-arg index="0" value="xuxu"/>-->
+		<!--<constructor-arg index="1" value="1"/>-->
+	</bean>
+
+
+	<test:user id="eric" name="123" sex="male" age="28" />
 
 	<!--<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>-->
 	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>
