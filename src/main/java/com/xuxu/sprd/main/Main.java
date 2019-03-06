@@ -19,10 +19,12 @@ public class Main {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        Father<Son> son =  new Father<Son>();
-        son.setT((Son)son);
-//        son.setS("123");
-        System.out.println(son.tToString());
+//        Father<Son> son =  new Father<Son>();
+//        son.setT((Son)son);
+////        son.setS("123");
+//        System.out.println(son.tToString());
+
+        final String s = "1";
     }
     static class Father<T extends Father>{
 

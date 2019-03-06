@@ -25,7 +25,7 @@
 	</bean>
 
 
-	<test:user id="eric" name="123" sex="male" age="28" />
+	<!--<test:user id="eric" name="123" sex="male" age="28" />-->
 
 	<!--<bean id="facpro" class="com.xuxu.sprd.ioc.FactoryPostProcessor"/>-->
 	<bean id="pro" class="com.xuxu.sprd.ioc.MyInstantiationAwareBeanPostProcessor"/>

@@ -1,33 +1,29 @@
 package com.xuxu.sprd.springSchema;
 
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
-import org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.beans.factory.xml.BeanDefinitionParser;
+import org.springframework.beans.factory.xml.ParserContext;
 import org.w3c.dom.Element;
 
 /**
  * @auther chen.haitao
  * @date 2019-01-17
  */
-public class UserBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
+public class UserBeanDefinitionParser implements BeanDefinitionParser {
 
 
     @Override
-    protected Class<?> getBeanClass(Element element) {
-        return User.class;
-    }
+    public BeanDefinition parse(Element element, ParserContext parserContext) {
+        RootBeanDefinition mbd =  new RootBeanDefinition();
+        mbd.setBeanClassName(element.getAttribute("class"));
+        String beanName = element.getAttribute("id");
+        MutablePropertyValues mutablePropertyValues = new MutablePropertyValues();
+        mutablePropertyValues.add("name", element.getAttribute("name"));
+        mbd.setPropertyValues(mutablePropertyValues);
+        parserContext.getRegistry().registerBeanDefinition(beanName, mbd);
 
-
-    @Override
-    protected void doParse(Element element, BeanDefinitionBuilder bean) {
-        String id = element.getAttribute("id");
-        String name = element.getAttribute("name");
-        String sex = element.getAttribute("sex");
-        int age = Integer.parseInt(element.getAttribute("age"));
-
-
-        bean.addPropertyValue("id", id);
-        bean.addPropertyValue("name", name);
-        bean.addPropertyValue("sex", sex);
-        bean.addPropertyValue("age", age);
+        return mbd;
     }
 }
